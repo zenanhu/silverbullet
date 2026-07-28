@@ -1,0 +1,1 @@
+Test utility (plug-api/system_mock.ts). Sets up a full in-memory mock of the SilverBullet system (System, EventHook, MemoryKvPrimitives, DataStore, DataStoreMQ, Space, Config, ObjectIndex, SpaceLuaEnvironment) and registers all real syscall implementations against it. Exports createMockSystem() so tests can spin up a complete runtime quickly without a browser.

@@ -1,0 +1,1 @@
+State management uses a custom reducer pattern (no Redux or external library). The reducer function (reducer.ts) takes (state, action) and returns new AppViewState. The Client class holds the current viewState and dispatches actions via Client.ui.viewDispatch(). Preact components re-render when state changes.

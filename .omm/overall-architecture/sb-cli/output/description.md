@@ -1,0 +1,1 @@
+Output formatting (bin/sb/src/output.rs, ~678 lines). Pure rendering library with no terminal side-effects. OutputMode: Auto (TTY→Text, otherwise JSON), Json, Text, Table, Jsonl, Yaml. format() renders values: strings pass through verbatim, arrays/objects render as kubectl-style tables with 40-char cell width. Supports --json, --text, and -o flags for mode override.

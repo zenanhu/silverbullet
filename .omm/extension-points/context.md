@@ -1,0 +1,1 @@
+PlugOS is a custom extension framework (not based on any standard). The System class handles plug lifecycle (load, activate, deactivate, unload). Manifests are cached for performance. Syscalls bridge the main-thread/worker boundary via postMessage. Plugs are compiled from .plug.yaml to .plug.json by the plug-compile CLI.

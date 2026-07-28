@@ -1,0 +1,1 @@
+Image file viewer (plugs/image-viewer/, 2 files). Registers as a document editor for image file extensions (jpg, jpeg, png, gif, svg, webp, avif, apng). Renders a full HTML/JS page with Panzoom v4.6.0 for pan/zoom, rotate controls, zoom controls, and dark/light theme support. Includes an "Image Viewer: Show Info" command.

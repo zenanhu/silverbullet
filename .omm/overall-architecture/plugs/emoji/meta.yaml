@@ -1,0 +1,9 @@
+created: 2026-07-28T02:48:52.517Z
+updated: 2026-07-28T02:48:52.517Z
+update_count: 1
+last_field: description
+kind: nested-class
+title: emoji
+children: []
+parentPath:
+  - plugs

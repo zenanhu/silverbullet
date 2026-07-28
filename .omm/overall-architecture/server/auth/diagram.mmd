@@ -1,0 +1,18 @@
+graph LR
+    auth-config["Config\nauth/config.rs"]
+    authenticator["Authenticator\nauth/authenticator.rs"]
+    login["Login Manager\nauth/login.rs"]
+    jwt-authorizer["JWT Authorizer\nauth/jwt_authorizer.rs"]
+    headless-token["Headless Token\nauth/headless_token.rs"]
+    lockout["Lockout Timer\nauth/lockout.rs"]
+    cookie["Cookie Helpers\nauth/cookie.rs"]
+    authorizer-trait["RequestAuthorizer\nauth/authorizer.rs"]
+
+    auth-config -->|"feeds credentials to"| authenticator
+    auth-config -->|"feeds credentials to"| login
+    authenticator -->|"issues/verifies JWTs"| login
+    authenticator -->|"verifies JWTs"| jwt-authorizer
+    lockout -->|"rate-limits"| login
+    cookie -->|"cookie name derivation"| jwt-authorizer
+    authorizer-trait -->|"implemented by"| jwt-authorizer
+    authorizer-trait -->|"decorated by"| headless-token

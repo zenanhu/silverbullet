@@ -1,0 +1,1 @@
+Read-Only decorator (server-common/src/space/readonly.rs). Wraps any SpacePrimitives and rejects all writes/deletes with SpaceError::WriteError. Reads pass through transparently. Used for SB_READ_ONLY servers to wrap the underlying writable space.

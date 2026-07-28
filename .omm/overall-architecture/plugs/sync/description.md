@@ -1,0 +1,1 @@
+Sync coordination (plugs/sync/, 2 files). Bridges the service-worker sync layer to the editor UI. Provides commands (Sync: Space, Sync: File) and event handlers: spaceSyncComplete triggers reindex, fileSyncComplete refreshes metadata, updateSyncStatus shows a progress bar, reportSyncConflict shows error notifications. Depends on sync, editor, index, and space syscalls.

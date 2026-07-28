@@ -1,0 +1,9 @@
+created: 2026-07-28T02:48:27.915Z
+updated: 2026-07-28T02:48:27.916Z
+update_count: 1
+last_field: description
+kind: nested-class
+title: syscall-bridge
+children: []
+parentPath:
+  - plug-api

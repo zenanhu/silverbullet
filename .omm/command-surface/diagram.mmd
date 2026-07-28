@@ -1,0 +1,23 @@
+graph TD
+    silverbullet-cli["silverbullet\nbin/silverbullet/"]
+    sb-cli["sb\nbin/sb/"]
+    plug-compile["plug-compile\nbin/plug-compile.ts"]
+
+    silverbullet-cli -->|"version"| sb-version
+    silverbullet-cli -->|"upgrade"| sb-upgrade["upgrade\ndownload & replace"]
+    silverbullet-cli -->|"(default) start server"| sb-serve["serve\nHTTP server"]
+
+    sb-cli -->|"eval / lua"| sb-eval["eval\nLua expression"]
+    sb-cli -->|"script / lua-script"| sb-script["script\nLua file"]
+    sb-cli -->|"query"| sb-query["query\nSLIQ query"]
+    sb-cli -->|"get"| sb-get["get\nobject retrieval"]
+    sb-cli -->|"describe"| sb-describe["describe\nschema introspection"]
+    sb-cli -->|"logs"| sb-logs["logs\nconsole streaming"]
+    sb-cli -->|"repl"| sb-repl["repl\ninteractive REPL"]
+    sb-cli -->|"space add/ls/rm"| sb-space["space\nmanage connections"]
+    sb-cli -->|"upgrade"| sb-upgrade2["upgrade\nself-update"]
+
+    plug-compile -->|"compile .plug.yaml → .plug.json"| pc-output["plug bundle\n.plug.json"]
+
+    classDef entry fill:#89b4fa,stroke:#89b4fa,color:#1e1e2e
+    class silverbullet-cli,sb-cli,plug-compile entry

@@ -1,0 +1,1 @@
+In-memory storage for testing (server-common/src/space/memory.rs). A HashMap-based SpacePrimitives behind a Mutex. Only compiled behind #[cfg(any(test, feature = "testing"))]. Auto-populates timestamps via chrono::Utc::now() on writes. Used by unit tests across the crate.

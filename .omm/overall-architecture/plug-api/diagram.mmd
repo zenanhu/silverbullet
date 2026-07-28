@@ -1,0 +1,17 @@
+graph LR
+    syscall-bridge["Syscall Bridge\nplug-api/syscall.ts"]
+    syscalls["Syscall Wrappers\nplug-api/syscalls/"]
+    types["Types\nplug-api/types/"]
+    lib["Library\nplug-api/lib/"]
+    ui["UI Components\nplug-api/ui/"]
+    system-mock["System Mock\nplug-api/system_mock.ts"]
+
+    syscalls -->|"calls globalThis.syscall via"| syscall-bridge
+    lib -->|"used by plugs for"| syscalls
+    ui -->|"renders plug panels"| syscalls
+    types -->|"defines interfaces for"| syscalls
+    types -->|"defines interfaces for"| lib
+    system-mock -->|"wires syscalls"| syscalls
+
+    classDef entry fill:#89b4fa,stroke:#89b4fa,color:#1e1e2e
+    class syscall-bridge entry

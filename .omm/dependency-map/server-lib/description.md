@@ -1,0 +1,1 @@
+Server HTTP library crate (server/). Library target (not a binary). Re-exports build_router, metrics_router, and ServerState. Depends on server-common for SpacePrimitives and BootConfig. Defines the runtime seam (RuntimeBackend/ClientTransport traits) that server-runtime-chrome implements. All route handlers and the auth subsystem live here.

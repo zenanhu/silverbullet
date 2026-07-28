@@ -1,0 +1,29 @@
+graph LR
+    boot["Boot\nclient/boot.ts"]
+    core["Client Core\nclient/client.ts"]
+    editor-ui["Editor UI\nclient/editor_ui.tsx"]
+    codemirror["CodeMirror\nclient/codemirror/"]
+    components["Components\nclient/components/"]
+    plugos["PlugOS\nclient/plugos/"]
+    space-lua["Space Lua\nclient/space_lua/"]
+    data["Data Layer\nclient/data/"]
+    spaces["Space Primitives\nclient/spaces/"]
+    service-worker["Service Worker\nclient/service_worker/"]
+    markdown-parser["Markdown Parser\nclient/markdown_parser/"]
+    markdown-renderer["Markdown Renderer\nclient/markdown_renderer/"]
+
+    boot -->|"creates Client"| core
+    core -->|"mounts UI"| editor-ui
+    core -->|"manages editor"| codemirror
+    editor-ui -->|"renders"| components
+    core -->|"loads plugs via"| plugos
+    core -->|"evaluates scripts"| space-lua
+    core -->|"persists state to"| data
+    core -->|"reads/writes files"| spaces
+    spaces -->|"syncs via"| service-worker
+    codemirror -->|"parses"| markdown-parser
+    markdown-parser -->|"feed parse trees to"| markdown-renderer
+    markdown-renderer -->|"renders widgets in"| codemirror
+
+    classDef entry fill:#89b4fa,stroke:#89b4fa,color:#1e1e2e
+    class boot entry

@@ -1,0 +1,13 @@
+created: 2026-07-28T02:50:02.788Z
+updated: 2026-07-28T02:50:13.576Z
+update_count: 6
+last_field: note
+git_commit: eb0497b6
+git_branch: local-mode-fs-access
+children:
+  - client-config
+  - html-preview
+  - markdown-files
+  - object-index
+  - parse-tree
+  - query-engine

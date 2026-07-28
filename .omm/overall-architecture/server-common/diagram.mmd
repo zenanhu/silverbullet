@@ -1,0 +1,18 @@
+graph LR
+    types["Types\nserver-common/src/types.rs"]
+    space-disk["Disk Space\nserver-common/src/space/disk.rs"]
+    space-http["HTTP Space\nserver-common/src/space/http.rs"]
+    space-memory["Memory Space\nserver-common/src/space/memory.rs"]
+    space-embed["Embed Space\nserver-common/src/space/embed.rs"]
+    space-readonly["ReadOnly Space\nserver-common/src/space/readonly.rs"]
+    crypto["Crypto\nserver-common/src/crypto.rs"]
+    upgrade["Upgrade\nserver-common/src/upgrade.rs"]
+
+    space-disk -->|"implements"| types
+    space-http -->|"implements"| types
+    space-memory -->|"implements"| types
+    space-embed -->|"implements"| types
+    space-readonly -->|"wraps SpacePrimitives"| types
+
+    classDef entry fill:#89b4fa,stroke:#89b4fa,color:#1e1e2e
+    class types entry

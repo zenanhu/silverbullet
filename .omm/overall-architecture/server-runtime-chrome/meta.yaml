@@ -1,0 +1,11 @@
+created: 2026-07-28T02:45:56.111Z
+updated: 2026-07-28T02:45:58.261Z
+update_count: 2
+last_field: diagram
+kind: nested-class
+title: server-runtime-chrome
+children:
+  - config
+  - supervisor
+  - transport
+parentPath: []

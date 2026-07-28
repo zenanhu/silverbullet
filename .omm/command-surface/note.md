@@ -1,0 +1,1 @@
+The GlobalFlags struct in sb's cli.rs is designed to be reuseable by the desktop App's CLI via #[command(flatten)], so the same CLI interface can be embedded in native apps. Output formatting supports --json, --text, -o (table|json|jsonl|yaml), and auto-detection based on TTY.

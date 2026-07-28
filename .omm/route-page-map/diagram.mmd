@@ -1,0 +1,21 @@
+graph LR
+    index["Index Page\nindex.md"]
+    url-navigator["URL Navigator\nclient/navigator.ts"]
+    editor["CodeMirror Editor\nclient/codemirror/"]
+    command-palette["Command Palette\nclient/components/command_palette.tsx"]
+    anything-picker["Anything Picker\nclient/components/anything_picker.tsx"]
+    page-links["Page Links\n(wikilinks & markdown links)"]
+    auth-page["Auth Page\nserver/src/handlers/auth.rs"]
+    config-page["Config Page\n(managed by CONFIG.md)"]
+
+    url-navigator -->|"pushState/popState"| editor
+    url-navigator -->|"normalizes paths"| index
+    editor -->|"click wikilink"| page-links
+    page-links -->|"navigate to"| url-navigator
+    command-palette -->|"open page / run command"| url-navigator
+    anything-picker -->|"fuzzy search → navigate"| url-navigator
+    url-navigator -->|"unauthorized →"| auth-page
+    command-palette -->|"Settings: Configure"| config-page
+
+    classDef entry fill:#89b4fa,stroke:#89b4fa,color:#1e1e2e
+    class url-navigator entry

@@ -1,0 +1,9 @@
+created: 2026-07-28T02:47:01.691Z
+updated: 2026-07-28T02:47:01.691Z
+update_count: 1
+last_field: description
+kind: nested-class
+title: spaces
+children: []
+parentPath:
+  - client

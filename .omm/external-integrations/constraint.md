@@ -1,0 +1,3 @@
+- Self-upgrade uses blocking reqwest (synchronous) and must be called before the Tokio runtime starts.
+- The proxy handler requires the X-Proxy-* headers to be set by the caller for URL and header forwarding.
+- Plug fetch requires explicit permission in the manifest (fetch permission flag).

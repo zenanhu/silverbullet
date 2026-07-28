@@ -1,0 +1,1 @@
+The main server binary (bin/silverbullet/src/main.rs). Subcommands: version (prints build version), upgrade / upgrade-edge (downloads and replaces the binary from GitHub Releases), and the default serve mode (starts the Axum HTTP server on the configured port). Parses CLI flags + SB_* env vars via config.rs.

@@ -1,0 +1,1 @@
+The server is a single-process Rust binary using Axum on Tokio. There is no database — all state is file-based (disk) or in-memory. The Chrome runtime runs in a separate Tokio runtime managed by ChromeTransport. Service worker is registered on first page load and handles caching/offline access.

@@ -1,0 +1,1 @@
+The source of all content: plain Markdown files (.md) stored on the server's filesystem. Served to the client via HTTP (/.fs/*) and synced to the client's IndexedDB by the service worker. Can also be loaded from local filesystem via File System Access API in local mode.

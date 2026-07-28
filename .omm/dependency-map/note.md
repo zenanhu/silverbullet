@@ -1,0 +1,1 @@
+The server library crate (server/) does not depend on server-runtime-chrome directly. Instead, it defines the ClientTransport trait, and the Chrome runtime crate depends on the server library to implement it. This keeps the server library runtime-agnostic — alternative backends (e.g., a webview runtime for Tauri) could be implemented without changing the server.

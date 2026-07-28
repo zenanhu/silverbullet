@@ -1,0 +1,1 @@
+The client.ts "god class" is ~2000 lines and orchestrates many concerns (editor, UI, navigation, events, data store, plug loading, sync). This is a known refactoring target. The server<->client<->Chrome runtime triangle for Lua evaluation is brittle — it involves HTTP requests, CDP commands, and service worker interceptions all chained together.

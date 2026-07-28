@@ -1,0 +1,27 @@
+graph LR
+    browser["Browser\nclient/"]
+    service-worker["Service Worker\nclient/service_worker.ts"]
+    axum-router["Axum Router\nserver/src/router.rs"]
+    auth-middleware["Auth Middleware\nserver/src/auth/"]
+    fs-handler["FS Handler\nserver/src/handlers/fs.rs"]
+    runtime-handler["Runtime Handler\nserver/src/handlers/runtime.rs"]
+    shell-handler["Shell Handler\nserver/src/handlers/shell.rs"]
+    proxy-handler["Proxy Handler\nserver/src/handlers/proxy.rs"]
+    disk-space["Disk Space\nserver-common/src/space/disk.rs"]
+    chrome-runtime["Chrome Runtime\nserver-runtime-chrome/"]
+
+    browser -->|"HTTP fetch / SP"| service-worker
+    service-worker -->|"proxies to"| axum-router
+    axum-router -->|"auth check"| auth-middleware
+    auth-middleware -->|"authorized → /fs"| fs-handler
+    auth-middleware -->|"authorized → /runtime"| runtime-handler
+    auth-middleware -->|"authorized → /shell"| shell-handler
+    auth-middleware -->|"authorized → /proxy"| proxy-handler
+    fs-handler -->|"read/write"| disk-space
+    runtime-handler -->|"eval Lua via CDP"| chrome-runtime
+    chrome-runtime -->|"CDP→headless browser→client→eval JS→return"| runtime-handler
+
+    classDef entry fill:#89b4fa,stroke:#89b4fa,color:#1e1e2e
+    classDef external fill:#585b70,stroke:#585b70,color:#cdd6f4
+    class browser entry
+    class chrome-runtime external

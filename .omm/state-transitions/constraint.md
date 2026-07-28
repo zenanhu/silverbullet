@@ -1,0 +1,3 @@
+- The reducer is synchronous and pure — no side effects allowed. Side effects (network calls, IndexedDB writes) happen in action creators before dispatch.
+- Service worker sync updates may arrive while the user is editing, requiring OT-style diff merging in content_manager.ts.
+- Page navigation preserves scroll position and cursor selection via the navigator's location tracking.

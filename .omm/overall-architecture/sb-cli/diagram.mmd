@@ -1,0 +1,18 @@
+graph LR
+    cli["CLI Definition\nbin/sb/src/cli.rs"]
+    run["Dispatch\nbin/sb/src/run.rs"]
+    conn["Connection\nbin/sb/src/conn.rs"]
+    api["HTTP API\nbin/sb/src/api.rs"]
+    config["Config\nbin/sb/src/config.rs"]
+    output["Output\nbin/sb/src/output.rs"]
+    commands["Commands\nbin/sb/src/commands/"]
+
+    cli -->|"parsed args passed to"| run
+    run -->|"resolves connection via"| conn
+    run -->|"resolves output mode via"| output
+    run -->|"dispatches to"| commands
+    conn -->|"uses"| api
+    conn -->|"persists spaces in"| config
+    commands -->|"calls API methods on"| api
+    commands -->|"formats with"| output
+    api -->|"makes HTTP calls to"| server["Server\nserver/"]

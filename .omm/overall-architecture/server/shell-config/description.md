@@ -1,0 +1,1 @@
+Shell execution policy (server/src/shell.rs). Parsed from environment variables. Controls whether server-side shell execution is allowed (disabled when SB_SHELL_BACKEND is set or the space is read-only) and optionally restricts execution to a command whitelist. Consumed by the /.shell handler and the ServerState.

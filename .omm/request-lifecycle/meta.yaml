@@ -1,0 +1,17 @@
+created: 2026-07-28T02:49:19.413Z
+updated: 2026-07-28T02:49:29.334Z
+update_count: 6
+last_field: note
+git_commit: eb0497b6
+git_branch: local-mode-fs-access
+children:
+  - auth-middleware
+  - axum-router
+  - browser
+  - chrome-runtime
+  - disk-space
+  - fs-handler
+  - proxy-handler
+  - runtime-handler
+  - service-worker
+  - shell-handler

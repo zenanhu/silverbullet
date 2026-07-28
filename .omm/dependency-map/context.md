@@ -1,0 +1,1 @@
+The Rust side uses a Cargo workspace (5 members: bin/silverbullet, bin/sb, server, server-common, server-runtime-chrome). The TypeScript side uses npm workspaces with ESBuild for bundling. The client bundle is embedded into the server binary via rust-embed in release builds.

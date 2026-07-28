@@ -1,0 +1,3 @@
+- TypeScript and Rust have no shared types. The HTTP API contract (FileMeta, BootConfig, SpaceError) is manually kept in sync between server-common/src/types.rs and plug-api/types/index.ts.
+- server-runtime-chrome depends on server-lib (for ClientTransport trait), creating a dependency from the runtime backend back to the library. This is intentional — the server library defines the seam.
+- server-bin depends on server-runtime-chrome only through server-lib's re-export, not directly.

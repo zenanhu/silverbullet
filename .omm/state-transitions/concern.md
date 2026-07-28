@@ -1,0 +1,1 @@
+The unsaved-changes detection flags dirty state when buffer content differs from persisted content. If the user navigates away with unsaved changes, auto-save is triggered, but network failures can result in lost edits. The service worker's offline cache mitigates this partially.

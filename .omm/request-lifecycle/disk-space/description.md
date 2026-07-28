@@ -1,0 +1,1 @@
+The filesystem-backed storage engine (server-common/src/space/disk.rs). Handles all file read/write/delete operations from the FS handler. Uses walkdir with .gitignore filtering, custom MIME type mapping, and path traversal guards. Writes support optional last_modified preservation for sync compatibility.

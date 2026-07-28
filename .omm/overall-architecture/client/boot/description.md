@@ -1,0 +1,1 @@
+Application bootstrap entry point (client/boot.ts, ~400 lines). Handles initial page load sequence: loads boot config from URL params or remote CONFIG page, sets up space encryption, registers the service worker, evaluates Space Lua configuration, creates the Config and Client instances, and mounts the editor UI. Also handles local-only mode (no server).

@@ -1,0 +1,1 @@
+Server-Side Rendering (server/src/ssr.rs, private module). Best-effort Markdown rendering for SEO on public read-only wikis. Provides convert_wiki_links() to transform [[wiki links]] into Markdown links and render_markdown() via pulldown-cmark. The rendered HTML is injected into the index.html shell by the bundle handler when the space is configured as a read-only public wiki.

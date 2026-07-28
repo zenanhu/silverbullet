@@ -1,0 +1,4 @@
+- Plugs run in isolated Web Workers — no direct DOM access, no shared state with the main thread. All communication goes through syscall message passing.
+- The fetch and shell syscalls require explicit permission flags in the manifest.
+- Space Lua scripts run in the main thread with full access to the custom Lua runtime — they can access any syscall via the space_lua_api bridge.
+- Custom syntax extensions must be registered before any parsing occurs.

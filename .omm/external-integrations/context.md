@@ -1,0 +1,1 @@
+All external HTTP calls go through reqwest (Rust side) or the browser's fetch API (client side). The proxy handler rewrites headers to avoid exposing internal server details. GitHub API calls are versioned (stable/edge channels) and map Rust's OS/arch to SilverBullet's release asset naming convention.

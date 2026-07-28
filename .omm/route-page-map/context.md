@@ -1,0 +1,1 @@
+Pages are identified by their path in the space (e.g., /My Page, /Projects/Report). Navigation is path-based — the URL bar always reflects the current page. Back/forward browser buttons work via popState. The SPA fallback on the server serves index.html for any path, and the client resolves the page from the URL.

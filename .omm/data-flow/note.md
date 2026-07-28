@@ -1,0 +1,1 @@
+The custom Lezer grammar is defined in client/markdown_parser/parser.ts and supports plug-defined custom syntax via the custom_syntax.ts extension point. This allows plugs like the index plug to register their own markdown syntax extensions for parsing.

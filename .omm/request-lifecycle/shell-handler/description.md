@@ -1,0 +1,1 @@
+Shell command execution handler (server/src/handlers/shell.rs). Handles POST /.shell with {cmd, args, stdin} body. Checks read_only flag, shell.enabled setting, and optional command whitelist before spawning. Streams stdout/stderr and returns {stdout, stderr, code}. Disabled when SB_SHELL_BACKEND is set.

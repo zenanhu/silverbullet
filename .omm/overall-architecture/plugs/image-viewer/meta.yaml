@@ -1,0 +1,9 @@
+created: 2026-07-28T02:48:54.332Z
+updated: 2026-07-28T02:48:54.333Z
+update_count: 1
+last_field: description
+kind: nested-class
+title: image-viewer
+children: []
+parentPath:
+  - plugs

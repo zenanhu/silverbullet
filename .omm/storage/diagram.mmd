@@ -1,0 +1,24 @@
+graph LR
+    disk["Disk\nserver-common/src/space/disk.rs"]
+    indexeddb["IndexedDB\nclient/data/indexeddb_kv_primitives.ts"]
+    memory["Memory\nserver-common/src/space/memory.rs"]
+    encrypted-idb["Encrypted DB\nclient/data/encrypted_kv_primitives.ts"]
+    http-remote["HTTP Remote\nserver-common/src/space/http.rs"]
+    readonly["ReadOnly\nserver-common/src/space/readonly.rs"]
+    fallthrough["Fallthrough\nserver-common/src/space/embed.rs"]
+    fs-access["FS Access API\nclient/spaces/fs_access_space_primitives.ts"]
+    sync-engine["Sync Engine\nclient/spaces/sync.ts"]
+
+    disk -->|"server-side primary"| readonly
+    fallthrough -->|"layers disk + bundle"| disk
+    indexeddb -->|"wrapped by AES-GCM"| encrypted-idb
+    sync-engine -->|"bi-directional sync"| indexeddb
+    sync-engine -->|"↔"| http-remote
+    http-remote -->|"talks to server"| disk
+    fs-access -->|"local mode"| sync-engine
+    memory -->|"testing only"| disk
+
+    classDef store fill:#a6e3a1,stroke:#a6e3a1,color:#1e1e2e
+    classDef external fill:#585b70,stroke:#585b70,color:#cdd6f4
+    class disk,indexeddb,encrypted-idb,memory store
+    class http-remote external

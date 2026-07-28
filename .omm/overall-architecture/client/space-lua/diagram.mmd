@@ -1,0 +1,14 @@
+graph LR
+    parse["Parser\nspace_lua/parse.ts"]
+    eval["Evaluator\nspace_lua/eval.ts"]
+    runtime["Runtime\nspace_lua/runtime.ts"]
+    stdlib["Standard Library\nspace_lua/stdlib/"]
+    query["Query Engine\nspace_lua/query_collection.ts"]
+    api["Lua API Bridge\nclient/space_lua_api.ts"]
+
+    parse -->|"produces AST"| eval
+    eval -->|"executes in"| runtime
+    runtime -->|"provides"| stdlib
+    query -->|"uses evaluator"| eval
+    query -->|"queries object index"| stdlib
+    api -->|"bridges syscalls to"| runtime

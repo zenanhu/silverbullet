@@ -1,0 +1,3 @@
+- The Markdown parser uses SilverBullet's own Lezer grammar, not a standard parser. This means standard Markdown tools cannot process SilverBullet markdown with extended syntax (wikilinks, tasks, attributes, admonitions).
+- The ObjectIndex is rebuilt on reindex and lives in memory during a session. Large spaces may cause memory pressure.
+- The parse tree is purely in-memory and is regenerated on each edit via CodeMirror's incremental parsing.

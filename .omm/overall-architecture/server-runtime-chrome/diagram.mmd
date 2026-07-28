@@ -1,0 +1,10 @@
+graph LR
+    transport["Chrome Transport\nserver-runtime-chrome/src/transport.rs"]
+    supervisor["Supervisor\nserver-runtime-chrome/src/supervisor.rs"]
+    config["Chrome Config\nserver-runtime-chrome/src/config.rs"]
+
+    transport -->|"spawns async task"| supervisor
+    transport -->|"reads config"| config
+    supervisor -->|"launches browser with"| config
+    supervisor -->|"publishes Live (browser+page)"| transport
+    transport -->|"implements ClientTransport trait"| server["Server Runtime\nserver/src/runtime/"]

@@ -1,0 +1,1 @@
+Markdown-to-HTML rendering (client/markdown_renderer/). Converts parse trees to HTML for static previews, inline result rendering, and SSR on the server. Used by the document editor for non-markdown file previews and by the result_render.ts for displaying query/Lua expression output.

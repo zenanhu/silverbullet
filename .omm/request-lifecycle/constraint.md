@@ -1,0 +1,3 @@
+- All /.fs operations are synchronous (run on Tokio's blocking thread pool) since SpacePrimitives is a synchronous trait.
+- The /.runtime/* path involves 3 hops: server handler → ChromeTransport (owned Tokio runtime) → headless browser → client JS → return. Each hop adds latency.
+- Service worker proxying requires HTTPS in production for the SW to register.

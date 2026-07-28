@@ -1,0 +1,9 @@
+created: 2026-07-28T02:47:05.442Z
+updated: 2026-07-28T02:47:05.442Z
+update_count: 1
+last_field: description
+kind: nested-class
+title: markdown-parser
+children: []
+parentPath:
+  - client

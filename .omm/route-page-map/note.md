@@ -1,0 +1,1 @@
+The navigator uses page references (Ref) to identify pages. A Ref can include a path, a header anchor, a position (pos), or a line/column reference. Anchor resolution (resolveAnchor) in the index plug translates named anchors (e.g., $myanchor) to positions within pages.

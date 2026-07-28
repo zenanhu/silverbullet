@@ -1,0 +1,1 @@
+The silverbullet binary uses clap for argument parsing. The sb CLI also uses clap with shared GlobalFlags (--space, --url, --token, --timeout, --json, --text, -o). The plug-compile CLI uses commander (Node.js). All sb commands communicate with a SilverBullet server over HTTP.

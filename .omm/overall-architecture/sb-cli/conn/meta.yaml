@@ -1,0 +1,9 @@
+created: 2026-07-28T02:48:14.883Z
+updated: 2026-07-28T02:48:14.883Z
+update_count: 1
+last_field: description
+kind: nested-class
+title: conn
+children: []
+parentPath:
+  - sb-cli

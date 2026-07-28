@@ -1,0 +1,26 @@
+graph LR
+    markdown-files["Markdown Files\nfilesystem"]
+    markdown-parser["Markdown Parser\nclient/markdown_parser/"]
+    parse-tree["Parse Tree\nclient/markdown_parser/parser.ts"]
+    codemirror["CodeMirror Editor\nclient/codemirror/"]
+    indexer["Indexer Pipeline\nplugs/index/"]
+    object-index["Object Index\nclient/data/object_index.ts"]
+    query-engine["Query Engine\nclient/space_lua/query_collection.ts"]
+    client-config["Client Config\nclient/config.ts"]
+    html-preview["HTML Preview\nclient/markdown_renderer/"]
+
+    markdown-files -->|"loaded by spaces/"| parse-tree
+    markdown-parser -->|"Lezer grammar →"| parse-tree
+    parse-tree -->|"feeds decorations to"| codemirror
+    parse-tree -->|"indexed by"| indexer
+    indexer -->|"extracts pages, tasks, items, links, headers, data"| object-index
+    object-index -->|"queried by"| query-engine
+    query-engine -->|"used by space-lua widgets/templates"| codemirror
+    markdown-parser -->|"also renders"| html-preview
+    object-index -->|"feeds"| client-config
+
+    classDef store fill:#a6e3a1,stroke:#a6e3a1,color:#1e1e2e
+    classDef entry fill:#89b4fa,stroke:#89b4fa,color:#1e1e2e
+    class markdown-files store
+    class object-index store
+    class parse-tree entry

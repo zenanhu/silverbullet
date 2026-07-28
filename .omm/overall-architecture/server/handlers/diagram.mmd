@@ -1,0 +1,17 @@
+graph LR
+    fs["File CRUD\nhandlers/fs.rs"]
+    bundle["Bundle/SPA\nhandlers/bundle.rs"]
+    control["Control\nhandlers/control.rs"]
+    auth-handler["Auth Pages\nhandlers/auth.rs"]
+    shell["Shell Exec\nhandlers/shell.rs"]
+    proxy["Proxy\nhandlers/proxy.rs"]
+    runtime-h["Runtime\nhandlers/runtime.rs"]
+    runtime-obj["Runtime Objects\nhandlers/runtime_objects.rs"]
+
+    control -->|"GET /.ping, /.config"| state["ServerState\nstate.rs"]
+    fs -->|"GET/PUT/DELETE /.fs"| state
+    auth-handler -->|"POST /.auth, GET /.logout"| state
+    shell -->|"POST /.shell"| state
+    proxy -->|"ANY /.proxy"| state
+    runtime-h -->|"POST /.runtime/lua"| state
+    runtime-obj -->|"GET /.runtime/objects"| state

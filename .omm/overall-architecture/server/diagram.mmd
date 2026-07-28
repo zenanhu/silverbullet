@@ -1,0 +1,20 @@
+graph LR
+    router["Router\nserver/src/router.rs"]
+    handlers["Handlers\nserver/src/handlers/"]
+    auth["Auth\nserver/src/auth/"]
+    runtime-seam["Runtime Seam\nserver/src/runtime/"]
+    state["Server State\nserver/src/state.rs"]
+    metrics["Metrics\nserver/src/metrics.rs"]
+    shell-config["Shell Config\nserver/src/shell.rs"]
+    ssr["SSR\nserver/src/ssr.rs"]
+
+    router -->|"delegates to"| handlers
+    router -->|"uses auth middleware"| auth
+    handlers -->|"reads shared state"| state
+    handlers -->|"calls runtime backend"| runtime-seam
+    state -->|"owns"| metrics
+    state -->|"owns"| shell-config
+    state -->|"owns auth config"| auth
+
+    classDef entry fill:#89b4fa,stroke:#89b4fa,color:#1e1e2e
+    class router entry

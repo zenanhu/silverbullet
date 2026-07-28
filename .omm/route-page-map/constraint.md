@@ -1,0 +1,4 @@
+- All page paths are case-sensitive.
+- Nested paths use / as separator and correspond to filesystem layout on the server.
+- The navigator preserves up to 50 location entries with scroll positions.
+- Page redirects are handled by the index plug's page alias system.

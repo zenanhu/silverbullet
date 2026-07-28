@@ -1,0 +1,14 @@
+graph LR
+    system["System\nplugos/system.ts"]
+    hooks["Hooks\nplugos/hooks/"]
+    syscalls["Syscalls\nplugos/syscalls/"]
+    sandboxes["Sandboxes\nplugos/sandboxes/"]
+    protocol["Protocol\nplugos/protocol.ts"]
+    manifest-cache["Manifest Cache\nplugos/manifest_cache.ts"]
+
+    system -->|"registers"| hooks
+    system -->|"registers"| syscalls
+    system -->|"creates"| sandboxes
+    sandboxes -->|"communicates via"| protocol
+    system -->|"uses"| manifest-cache
+    hooks -->|"dispatch calls to"| syscalls

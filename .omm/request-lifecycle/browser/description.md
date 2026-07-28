@@ -1,0 +1,1 @@
+The user's browser running the SilverBullet SPA client. Sends HTTP requests directly for initial page load, then communicates with the server via the service worker for file operations. The headless Chrome instance (used for server-side Lua) also runs this same SPA in headless mode.

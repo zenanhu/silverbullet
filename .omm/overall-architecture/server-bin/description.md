@@ -1,0 +1,1 @@
+Standalone server binary (bin/silverbullet/). The main entry point for SilverBullet. Parses CLI flags and environment variables (SB_*), wires up ServerState, starts the Axum HTTP server. Also handles the self-upgrade subcommand. Embeds the client bundle and base_fs assets via rust-embed. Files: main.rs, lib.rs, config.rs, server.rs, embed.rs.

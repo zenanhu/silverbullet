@@ -1,0 +1,1 @@
+The plug-api crate is published to npm and imported by plug authors. Changes to syscall signatures or types must maintain backward compatibility or risk breaking third-party plugs. The core plug's schema definitions are the source of truth for configuration shapes, and changing them requires updating the configuration-manager UI.

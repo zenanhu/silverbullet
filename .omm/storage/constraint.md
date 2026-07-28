@@ -1,0 +1,4 @@
+- No server-side database — all storage is filesystem-based. This means no transactions, no concurrent-write safety beyond filesystem guarantees.
+- IndexedDB has storage limits (~50% of disk in Chrome). Large spaces may hit browser storage quotas.
+- Encrypted KV stores raw AES-GCM encrypted values — keys and query metadata are not encrypted, only values.
+- The sync engine is best-effort and can create conflict copies on concurrent edits.

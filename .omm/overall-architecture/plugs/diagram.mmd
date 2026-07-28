@@ -1,0 +1,18 @@
+graph LR
+    core["Core\nplugs/core/"]
+    editor["Editor\nplugs/editor/"]
+    index["Index\nplugs/index/"]
+    sync["Sync\nplugs/sync/"]
+    emoji["Emoji\nplugs/emoji/"]
+    image-viewer["Image Viewer\nplugs/image-viewer/"]
+    config-manager["Config Manager\nplugs/configuration-manager/"]
+    object-graph["Object Graph\nplugs/object-graph/"]
+
+    editor -->|"queries pages via"| index
+    sync -->|"reindexes after sync via"| index
+    config-manager -->|"reads/writes config via"| index
+    object-graph -->|"queries relations via"| index
+    core -->|"defines schemas for"| index
+
+    classDef entry fill:#89b4fa,stroke:#89b4fa,color:#1e1e2e
+    class index entry

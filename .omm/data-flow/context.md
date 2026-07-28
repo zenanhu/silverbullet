@@ -1,0 +1,1 @@
+This pipeline runs entirely client-side in the browser. The index plug subscribes to page:index events emitted when pages are loaded or modified. The indexer runs asynchronously to avoid blocking the editor. ObjectIndex is an in-memory index built from the DataStore (IndexedDB). The SLIQ query engine is a custom Lua-based query language executed by the Space Lua runtime.

@@ -1,0 +1,1 @@
+The Chrome runtime triangle (server → CDP → headless browser → client JS) is fragile: if the headless browser crashes or times out during Lua evaluation, the runtime handler returns 503. The supervisor in server-runtime-chrome does auto-reconnect with exponential backoff, but there is a window where requests fail.

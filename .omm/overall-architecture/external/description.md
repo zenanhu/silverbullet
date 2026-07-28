@@ -1,0 +1,1 @@
+External services SilverBullet connects to: GitHub Releases API (self-upgrade), arbitrary HTTP/HTTPS endpoints (via /.proxy/* and native_fetch syscall), Docker Hub (container distribution). These are third-party services outside the codebase.

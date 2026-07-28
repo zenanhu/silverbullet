@@ -1,0 +1,28 @@
+graph LR
+    plugos-system["PlugOS System\nclient/plugos/system.ts"]
+    command-hook["Command Hook\nplugos/hooks/command.ts"]
+    slash-command-hook["Slash Command\nplugos/hooks/slash_command.ts"]
+    code-widget-hook["Code Widget\nplugos/hooks/code_widget.ts"]
+    document-editor-hook["Document Editor\nplugos/hooks/document_editor.ts"]
+    event-hook["Event Hook\nplugos/hooks/event.ts"]
+    mq-hook["MQ Hook\nplugos/hooks/mq.ts"]
+    plug-namespace-hook["Namespace Hook\nplugos/hooks/plug_namespace.ts"]
+    syscall-hook["Syscall Hook\nplugos/hooks/syscall.ts"]
+    worker-sandbox["Worker Sandbox\nplugos/sandboxes/worker_sandbox.ts"]
+    custom-syntax["Custom Syntax\nclient/markdown_parser/custom_syntax.ts"]
+    space-lua-api["Space Lua API\nclient/space_lua_api.ts"]
+
+    plugos-system -->|"registers"| command-hook
+    plugos-system -->|"registers"| slash-command-hook
+    plugos-system -->|"registers"| code-widget-hook
+    plugos-system -->|"registers"| document-editor-hook
+    plugos-system -->|"registers"| event-hook
+    plugos-system -->|"registers"| mq-hook
+    plugos-system -->|"registers"| plug-namespace-hook
+    plugos-system -->|"registers"| syscall-hook
+    plugos-system -->|"creates isolated"| worker-sandbox
+    custom-syntax -->|"plug-defined grammar"| plugos-system
+    space-lua-api -->|"syscall bridge to Lua"| plugos-system
+
+    classDef entry fill:#89b4fa,stroke:#89b4fa,color:#1e1e2e
+    class plugos-system entry

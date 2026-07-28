@@ -1,0 +1,1 @@
+The SPA fallback route (catch-all `*`) serves the client bundle from an embedded or on-disk directory. For public read-only wikis, the bundle handler injects server-side-rendered markdown (via ssr.rs) into the HTML shell for SEO.

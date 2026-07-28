@@ -1,0 +1,1 @@
+Emoji autocomplete (plugs/emoji/, 5 files). Listens on editor:complete to provide emoji autocompletions when the user types :shortcode:. Checks against built-in emoji data (emoji.json) and user-defined aliases from space config. Prevents completion inside Lua directives and fenced code blocks.

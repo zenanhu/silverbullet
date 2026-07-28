@@ -1,0 +1,1 @@
+The indexer pipeline runs every indexer function on every page change. If a single indexer is slow (e.g., large YAML data blocks, complex relation graphs), it can delay other indexers and cause the object index to be temporarily stale. The message queue (DataStoreMQ) batches indexing work but does not prioritize.

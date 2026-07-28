@@ -1,0 +1,1 @@
+Intercepts fetch requests from the client page. Routes API calls (/.fs/*, /.runtime/*) to the server, serves cached client assets offline. The SyncEngine manages bi-directional sync between local IndexedDB and the remote server. Requires HTTPS for registration in production.

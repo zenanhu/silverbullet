@@ -1,0 +1,1 @@
+The main Axum router (server/src/router.rs). Separates routes into two groups: protected (behind auth middleware for /.config, /.fs, /.shell, /.proxy, /.runtime) and open (/.ping, /.auth, /.logout, SPA fallback). Uses the Tower middleware stack for auth and metrics. Provides the run_blocking seam for synchronous SpacePrimitives I/O.

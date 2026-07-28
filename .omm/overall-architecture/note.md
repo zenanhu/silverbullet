@@ -1,0 +1,1 @@
+The project uses two distinct extension/scripting mechanisms: (1) PlugOS for compiled TypeScript plugs running in Web Workers, and (2) Space Lua for interpreted Lua scripts embedded in Markdown pages running in the main thread. These are separate systems with different APIs and lifecycles.

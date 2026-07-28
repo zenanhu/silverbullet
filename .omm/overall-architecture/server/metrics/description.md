@@ -1,0 +1,1 @@
+Prometheus metrics (server/src/metrics.rs). Owns a Prometheus Registry with four IntCounters: silverbullet_http_requests (total requests by method and path), silverbullet_shell_executions, silverbullet_proxy_requests, and silverbullet_runtime_api_requests_total. Exposes gather() for Prometheus text exposition on a separate metrics port.

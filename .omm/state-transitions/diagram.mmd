@@ -1,0 +1,22 @@
+graph TD
+    boot["Boot\nclient/boot.ts"]
+    loading["Loading State\n(reducer loading=true)"]
+    editor-ready["Editor Ready\n(editor:pageLoaded)"]
+    editing["Editing\n(user types)"]
+    saving["Saving\n(auto-save throttle)"]
+    navigating["Navigating\n(page click / URL change)"]
+    sync["Syncing\n(service worker)"]
+    idle["Idle\n(page loaded, no changes)"]
+
+    boot -->|"initialize config, SW, Client"| loading
+    loading -->|"page content loaded"| editor-ready
+    editor-ready -->|"user edits text"| editing
+    editing -->|"auto-save triggers"| saving
+    saving -->|"write to server"| idle
+    idle -->|"user taps link"| navigating
+    navigating -->|"load new page"| loading
+    editing -->|"service worker sync"| sync
+    sync -->|"file updated remotely"| editing
+
+    classDef entry fill:#89b4fa,stroke:#89b4fa,color:#1e1e2e
+    class boot entry

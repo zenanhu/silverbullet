@@ -1,0 +1,9 @@
+created: 2026-07-28T02:48:23.382Z
+updated: 2026-07-28T02:48:23.383Z
+update_count: 1
+last_field: description
+kind: nested-class
+title: commands
+children: []
+parentPath:
+  - sb-cli

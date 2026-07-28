@@ -1,0 +1,25 @@
+graph LR
+    client["Client\nclient/"]
+    server["Server\nserver/"]
+    server-bin["Server Binary\nbin/silverbullet/"]
+    server-common["Server Common\nserver-common/"]
+    server-runtime-chrome["Chrome Runtime\nserver-runtime-chrome/"]
+    sb-cli["CLI Client\nbin/sb/"]
+    plug-api["Plug API\nplug-api/"]
+    plugs["Built-in Plugs\nplugs/"]
+    external["External Services"]
+
+    server-bin -->|"wraps"| server
+    server -->|"uses types & traits"| server-common
+    server -->|"spawns headless browser"| server-runtime-chrome
+    client -->|"HTTP REST /.fs/*, /.runtime/*"| server
+    sb-cli -->|"HTTP API client"| server
+    client -->|"loads via PlugOS"| plugs
+    plugs -->|"uses typed syscalls"| plug-api
+    server -->|"self-upgrade HTTP"| external
+    client -->|"native_fetch syscall"| external
+
+    classDef external fill:#585b70,stroke:#585b70,color:#cdd6f4
+    classDef entry fill:#89b4fa,stroke:#89b4fa,color:#1e1e2e
+    class external external
+    class client,server-bin,sb-cli entry

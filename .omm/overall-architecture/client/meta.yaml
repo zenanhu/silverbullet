@@ -1,0 +1,20 @@
+created: 2026-07-28T02:45:34.602Z
+updated: 2026-07-28T02:45:39.367Z
+update_count: 2
+last_field: diagram
+kind: nested-class
+title: client
+children:
+  - boot
+  - codemirror
+  - components
+  - core
+  - data
+  - editor-ui
+  - markdown-parser
+  - markdown-renderer
+  - plugos
+  - service-worker
+  - space-lua
+  - spaces
+parentPath: []

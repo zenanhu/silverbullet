@@ -1,0 +1,18 @@
+graph LR
+    server["Server\nserver/"]
+    github-releases["GitHub Releases\napi.github.com"]
+    docker-hub["Docker Hub\nhub.docker.com"]
+    proxy-handler["Proxy Handler\nserver/src/handlers/proxy.rs"]
+    fetch-syscall["Fetch Syscall\nclient/plugos/syscalls/fetch.ts"]
+    native-fetch["Native Fetch\nplug-api/lib/native_fetch.ts"]
+    external-apis["External APIs\nvarious"]
+
+    server -->|"self-upgrade downloads"| github-releases
+    server -->|"published to"| docker-hub
+    server -->|"reverse proxy via"| proxy-handler
+    proxy-handler -->|"forwards to"| external-apis
+    fetch-syscall -->|"plug HTTP requests"| external-apis
+    fetch-syscall -->|"proxied through"| native-fetch
+
+    classDef external fill:#585b70,stroke:#585b70,color:#cdd6f4
+    class github-releases,docker-hub,external-apis external

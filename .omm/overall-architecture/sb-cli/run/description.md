@@ -1,0 +1,1 @@
+Command dispatch (bin/sb/src/run.rs, ~225 lines). The central orchestrator called by main.rs. Resolves connection (via conn.rs) and output mode (via output.rs), then dispatches to individual command modules. Skips connection setup for upgrade commands. Exposes resolve_conn and resolve_out as public helpers for reuse by the desktop app CLI.

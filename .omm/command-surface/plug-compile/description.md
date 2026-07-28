@@ -1,0 +1,1 @@
+Plug compiler CLI (bin/plug-compile.ts). Compiles .plug.yaml manifest files into .plug.json bundles using ESBuild. Used in the build pipeline and by plug authors. Supports watch mode, debug mode, and minification. Input .plug.yaml and output .plug.json. Node.js based (commander, ESBuild).

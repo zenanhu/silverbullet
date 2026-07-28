@@ -1,0 +1,5 @@
+- The server binary embeds the client bundle via rust-embed in release builds.
+- Client and server communicate exclusively over HTTP; no WebSocket support.
+- Service worker proxying requires HTTPS in production for the service worker to register.
+- The Chrome runtime requires a Chromium installation on the server for server-side Lua evaluation.
+- Plugs run in isolated Web Workers — all interaction with the main thread goes through syscall message passing.

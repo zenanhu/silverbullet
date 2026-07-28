@@ -1,0 +1,1 @@
+The Lezer parse tree produced by the custom Markdown parser. This is the central data structure that feeds both the CodeMirror editor decorations and the indexer pipeline. The tree contains typed nodes for all SilverBullet-specific syntax: WikiLinks, Hashtags, Tasks, FrontMatter, FencedCode, Admonitions, Footnotes, Attributes, LuaDirectives, HTMLBlocks.

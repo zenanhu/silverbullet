@@ -1,0 +1,1 @@
+The GitHUb releases URL is constructed from the version tag: STABLE_URL_PREFIX = "https://github.com/silverbulletmd/silverbullet/releases/download/{version}" or EDGE_URL_PREFIX = "https://github.com/silverbulletmd/silverbullet/releases/download/edge". Asset names use the convention {name}-{os}-{arch}.zip (e.g., silverbullet-linux-x86_64.zip, sb-macos-aarch64.zip).

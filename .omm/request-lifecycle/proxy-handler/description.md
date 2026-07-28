@@ -1,0 +1,1 @@
+Reverse proxy handler (server/src/handlers/proxy.rs). Handles ANY /.proxy/{*path}. Forwards proxied HTTP requests to external hosts. Derives target URL from headers or query params, collects X-Proxy-Header-* forwarding headers, dispatches via reqwest. Used by Space Lua scripts to call external APIs.

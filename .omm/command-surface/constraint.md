@@ -1,0 +1,4 @@
+- sb commands require either --url for direct connection or a named space configured via sb space add.
+- eval and script return structured results in the {result, error} JSON envelope.
+- get returns exit code 3 when requesting a specific object that is not found (404).
+- logs --follow polls every 500ms via GET /.runtime/logs with a since timestamp.

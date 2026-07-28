@@ -1,0 +1,1 @@
+Standalone server binary (bin/silverbullet/). Depends on server-lib to build the router and server-state, and server-common for SpacePrimitives implementations. Parses CLI flags and env vars, wires up the Axum HTTP server, starts listening. Embeds the client bundle via rust-embed in release builds.

@@ -1,0 +1,1 @@
+Lua evaluation handler (server/src/handlers/runtime.rs). Handles: POST /.runtime/lua (eval a single Lua expression with X-Timeout header), POST /.runtime/lua_script (execute a Lua script), GET /.runtime/logs (retrieve buffered console log entries). Returns the {result, error} JSON envelope. Returns 503 when no RuntimeBackend is configured.

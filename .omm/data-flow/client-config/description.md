@@ -1,0 +1,1 @@
+Client configuration (client/config.ts). Loads space settings from the parsed CONFIG page. Uses JSON Schema validation against schemas defined in the core plug. Configuration affects the entire data pipeline: indexPage determines which page is treated as the config source, spaceIgnore patterns filter which files are indexed, objectDecorators add computed fields.
